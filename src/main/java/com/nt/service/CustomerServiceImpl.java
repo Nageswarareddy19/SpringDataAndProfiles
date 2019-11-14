@@ -50,11 +50,11 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public Customer findByEmail(String email) {
 		CustomerEntity entity = custRepo.findByEmail(email);
-		
-		if(entity!=null) {
-		Customer model = new Customer();
-		BeanUtils.copyProperties(entity, model);
-		return model;
+
+		if (entity != null) {
+			Customer model = new Customer();
+			BeanUtils.copyProperties(entity, model);
+			return model;
 		}
 
 		return null;
