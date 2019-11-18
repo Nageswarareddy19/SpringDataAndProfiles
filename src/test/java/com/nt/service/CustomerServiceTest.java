@@ -1,6 +1,7 @@
 package com.nt.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -48,7 +49,7 @@ public class CustomerServiceTest {
 	 */
 
 	@Test
-	public void addCustomerTest() {
+	public void addCustomerTestPositive() {
 
 		Customer customer = new Customer();
 		customer.setCustomerId(101);
@@ -60,6 +61,21 @@ public class CustomerServiceTest {
 
 		boolean isSaved = service.addCustomer(customer);
 		assertTrue(isSaved);
+
+	}
+	@Test
+	public void addCustomerTestNegative() {
+
+		Customer customer = new Customer();
+		customer.setCustomerId(0);
+		customer.setCustomerEmail("krishna@gmail.com");
+		customer.setCustomerName("krishna reddy");
+		CustomerEntity entity = new CustomerEntity();
+		BeanUtils.copyProperties(customer, entity);
+		when(mockRepo.save(Mockito.any(CustomerEntity.class))).thenReturn(entity);
+
+		boolean isSaved = service.addCustomer(customer);
+		assertFalse(isSaved);
 
 	}
 

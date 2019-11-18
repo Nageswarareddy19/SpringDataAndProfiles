@@ -29,7 +29,7 @@ public class CustomerExceptionMapper {
 		error.setErrorCode(400);
 		error.setErrorDesc("Customer emails are not found");
 		error.setDate(new Date());
-		return new ResponseEntity<ApiError>(error,HttpStatus.BAD_GATEWAY);
+		return new ResponseEntity<ApiError>(error,HttpStatus.BAD_REQUEST);
 		
 	}
 

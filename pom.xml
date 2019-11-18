@@ -86,6 +86,16 @@
 		<groupId>org.jacoco</groupId>
 		<artifactId>jacoco-maven-plugin</artifactId>
 		<version>0.8.2</version>
+		
+		<configuration>
+		<excludes>
+			<exclude>**/com/nt/entity/**</exclude>
+			<exclude>**/com/nt/model/**</exclude>
+			<exclude>**/com/nt/Proj06CustomerExampleApplication.class</exclude>
+			<exclude>**/com/nt/ServletInitializer.class</exclude>
+		
+		</excludes>
+		</configuration>
 		<executions>
 			<execution>
 				<goals>
