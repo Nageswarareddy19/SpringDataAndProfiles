@@ -18,4 +18,4 @@ spring:
         format_sql: true
         dialect: org.hibernate.dialect.Oracle10gDialect
 #logging configuration
-logging:  file:    path: D:\\Ashok IT School\\SpringBoot-Cloud-MicroServices\\Work-Space\\Proj_06_CustomerExample\\CustomerRestApiLogInfo
+logging:  file:    name: D:\\Ashok IT School\\SpringBoot-Cloud-MicroServices\\Work-Space\\logs\\CustomerRest.log
